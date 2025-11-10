@@ -71,6 +71,19 @@ body {
         border-radius: 8px;
     }
 
+    .logo-navbar {
+      height: 100px;
+      padding-right: 15px;
+      padding-left: 10px;
+    }
+
+    .brand-text {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: 700;
+      color: var(--white) !important;
+    }
+
     /* Force navbar links to be visible */
     .navbar-nav .nav-link {
       display: block !important;
@@ -103,6 +116,25 @@ body {
       
       .navbar-nav .nav-link {
         width: 100%;
+      }
+
+      .logo-navbar {
+        height: 28px;
+      }
+
+      .brand-text {
+        font-size: 1.1rem; /* ~17px */
+      }
+    }
+
+    /* Celulares (até 575px) */
+    @media (max-width: 575.98px) {
+      .logo-navbar {
+        height: 24px;
+      }
+
+      .brand-text {
+        font-size: 1rem; /* ~16px */
       }
     }
 
@@ -420,31 +452,6 @@ body {
     .info-text p {
       margin: 0;
       color: #666;
-    }
-
-    .company-details {
-      background: #f8f9fa;
-      padding: 25px;
-      border-radius: 10px;
-      border-left: 4px solid #e67e22;
-      height: 100%;
-    }
-
-    .company-details h3 {
-      color: #1a5490;
-      margin-top: 0;
-      margin-bottom: 15px;
-      font-weight: bold;
-    }
-
-    .company-details p {
-      margin: 8px 0;
-      color: #555;
-      font-size: 14px;
-    }
-
-    .company-details strong {
-      color: #333;
     }
 
     /* Footer */
