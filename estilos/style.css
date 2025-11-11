@@ -140,23 +140,78 @@ body {
 
     /* Hero Section */
     .hero {
-      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-      padding: 110px 0;
+      position: relative;
+      padding: 80px 0;
       text-align: center;
+      overflow: hidden;
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-carousel {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+    }
+
+    .hero-carousel .carousel-inner,
+    .hero-carousel .carousel-item {
+      height: 100%;
+      background-attachment: fixed;
+    }
+
+    .hero-carousel .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      background-attachment: fixed;
+    }
+
+    .img-hero {
+      background-attachment: fixed;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(26, 84, 144, 0.75);
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
     }
 
     .hero h1 {
       font-size: clamp(32px, 5vw, 48px);
-      text-shadow: 2px 2px 0px white;
       margin: 0 0 20px 0;
-      color: #1a5490;
+      color: #ffffff;
       font-weight: bold;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
     }
 
     .hero p {
       font-size: clamp(16px, 3vw, 20px);
-      color: #242424;
+      color: #ffffff;
       margin-bottom: 30px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        min-height: 400px;
+        padding: 60px 0;
+      }
     }
 
     .cta-button {
@@ -175,6 +230,10 @@ body {
 
     .cta-button:hover {
       background: #d35400;
+    }
+
+    #foto-canva {
+      background-size: contain;
     }
 
     /* About Section */
