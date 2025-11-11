@@ -58,23 +58,51 @@
       </div>
     </nav>
 
-    <section id="inicio" class="hero"><!-- Carousel de Imagens -->
-   <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel" data-bs-interval="5000">
-    <div class="carousel-inner">
-     <div class="carousel-item active"><img src="imagens/foto1.jpg" alt="Construção de edifícios modernos" onerror="this.src=''; this.style.display='none';" class="img-hero">
-     </div>
-     <div class="carousel-item"><img src="imagens/foto2.jpg" alt="Obra em construção" onerror="this.src=''; this.style.display='none';" class="img-hero">
-     </div>
-     <div class="carousel-item"><img src="imagens/imagem-desfoque2.jpg" alt="Estrutura de construção civil" onerror="this.src=''; this.style.display='none';" id="foto-canva" class="img-hero">
-     </div>
-    </div>
-   </div><!-- Overlay escuro -->
-   <div class="hero-overlay"></div><!-- Conteúdo do Hero -->
-   <div class="container hero-content">
-    <h1 id="hero-title">Construindo o Futuro com Certeza</h1>
-    <p id="hero-subtitle">Excelência em construção desde 2023</p><a href="#contacto" class="cta-button">Solicite um Orçamento</a>
-   </div>
-  </section>
+    <section id="inicio" class="hero">
+      <!-- Carousel de Imagens -->
+      <div
+        id="heroCarousel"
+        class="carousel slide hero-carousel"
+        data-bs-ride="carousel"
+        data-bs-interval="5000"
+      >
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img
+              src="imagens/foto1.jpg"
+              alt="Construção de edifícios modernos"
+              onerror="this.src=''; this.style.display='none';"
+              class="img-hero"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="imagens/foto2.jpg"
+              alt="Obra em construção"
+              onerror="this.src=''; this.style.display='none';"
+              class="img-hero"
+            />
+          </div>
+          <div class="carousel-item">
+            <img
+              src="imagens/imagem-desfoque2.jpg"
+              alt="Estrutura de construção civil"
+              onerror="this.src=''; this.style.display='none';"
+              id="foto-canva"
+              class="img-hero"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- Overlay escuro -->
+      <div class="hero-overlay"></div>
+      <!-- Conteúdo do Hero -->
+      <div class="container hero-content">
+        <h1 id="hero-title">Construindo o Futuro com Certeza</h1>
+        <p id="hero-subtitle">Excelência em construção desde 2023</p>
+        <a href="#contato" class="cta-button">Solicite um Orçamento</a>
+      </div>
+    </section>
 
     <section id="sobre" class="about">
       <div class="container">
@@ -278,10 +306,11 @@
         </div>
       </div>
     </section>
+
     <section id="contato" class="contact">
       <div class="container">
-        <h2 id="contact-title">Entre em Contato</h2>
-        <div class="row g-4 justify-content-center">
+        <h2 id="contact-title">Entre em Contacto</h2>
+        <div class="row g-4">
           <div class="col-lg-6">
             <div class="contact-info">
               <div class="info-item">
@@ -305,9 +334,97 @@
                 <div class="info-icon">📞</div>
                 <div class="info-text">
                   <h3>Telefone</h3>
-                  <p>Entre em contato para mais informações</p>
+                  <p>Entre em contacto para mais informações</p>
                 </div>
               </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="quote-form-card">
+              <h3>📋 Solicite um Orçamento</h3>
+              <form id="quote-form" class="quote-form" novalidate>
+                <div class="mb-3">
+                  <label for="quote-name" class="form-label"
+                    >Nome Completo *</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="quote-name"
+                    placeholder="Seu nome completo"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="quote-email" class="form-label">Email *</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="quote-email"
+                    placeholder="seu@email.com"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="quote-phone" class="form-label">Telefone *</label>
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="quote-phone"
+                    placeholder="+351 912 345 678"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="quote-service" class="form-label"
+                    >Tipo de Serviço *</label
+                  >
+                  <select class="form-control" id="quote-service" required>
+                    <option value="">Selecione um serviço</option>
+                    <option value="construcao">Construção de Edifícios</option>
+                    <option value="revestimento">
+                      Revestimento de Pavimentos
+                    </option>
+                    <option value="pintura">Pintura e Vidros</option>
+                    <option value="limpeza-industrial">
+                      Limpeza Industrial
+                    </option>
+                    <option value="limpeza-geral">Limpeza Geral</option>
+                    <option value="outro">Outro</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="quote-location" class="form-label"
+                    >Localização do Projeto</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="quote-location"
+                    placeholder="Cidade/Região"
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="quote-message" class="form-label"
+                    >Descrição do Projeto *</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="quote-message"
+                    rows="4"
+                    placeholder="Descreva o seu projeto em detalhe..."
+                    required
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn-quote w-100" id="submit-btn">
+                  Enviar Pedido de Orçamento
+                </button>
+                <div
+                  id="form-message"
+                  class="form-message"
+                  style="display: none"
+                ></div>
+              </form>
             </div>
           </div>
         </div>
@@ -353,6 +470,79 @@
           }, 5000);
         });
 
+      // Quote form handling
+      document
+        .getElementById("quote-form")
+        .addEventListener("submit", async function (e) {
+          e.preventDefault();
+
+          // Check if form is valid
+          if (!this.checkValidity()) {
+            // Trigger browser validation messages
+            this.classList.add("was-validated");
+            return;
+          }
+
+          const submitBtn = document.getElementById("submit-btn");
+          const messageDiv = document.getElementById("form-message");
+
+          // Get form data
+          const formData = {
+            name: document.getElementById("quote-name").value,
+            email: document.getElementById("quote-email").value,
+            phone: document.getElementById("quote-phone").value,
+            service: document.getElementById("quote-service").value,
+            location: document.getElementById("quote-location").value,
+            message: document.getElementById("quote-message").value,
+          };
+
+          // Disable button and show loading
+          submitBtn.disabled = true;
+          submitBtn.textContent = "A enviar...";
+          messageDiv.style.display = "none";
+
+          // Simulate sending (in production, this would call your PHP script)
+          try {
+            // In production, uncomment this and replace with your PHP endpoint:
+            // const response = await fetch('send-quote.php', {
+            //   method: 'POST',
+            //   headers: {
+            //     'Content-Type': 'application/json',
+            //   },
+            //   body: JSON.stringify(formData)
+            // });
+            // const result = await response.json();
+
+            // Simulate delay
+            await new Promise((resolve) => setTimeout(resolve, 1500));
+
+            // Show success message
+            messageDiv.className = "form-message success";
+            messageDiv.textContent =
+              "✓ Pedido enviado com sucesso! Entraremos em contato em breve.";
+            messageDiv.style.display = "block";
+
+            // Reset form
+            this.reset();
+            this.classList.remove("was-validated");
+          } catch (error) {
+            // Show error message
+            messageDiv.className = "form-message error";
+            messageDiv.textContent =
+              "✗ Erro ao enviar pedido. Por favor, tente novamente ou contate-nos diretamente.";
+            messageDiv.style.display = "block";
+          } finally {
+            // Re-enable button
+            submitBtn.disabled = false;
+            submitBtn.textContent = "Enviar Pedido de Orçamento";
+
+            // Hide message after 5 seconds
+            setTimeout(() => {
+              messageDiv.style.display = "none";
+            }, 5000);
+          }
+        });
+
       const defaultConfig = {
         company_name: "Década de Certezas",
         hero_title: "Construindo o Futuro com Certeza",
@@ -360,7 +550,7 @@
         about_title: "Sobre a Década de Certezas",
         services_title: "Os Nossos Serviços",
         portal_title: "Portal do Cliente",
-        contact_title: "Entre em Contato",
+        contact_title: "Entre em Contacto",
         footer_text: "© 2024 Década de Certezas. Todos os direitos reservados.",
         background_color: "#f5f7fa",
         primary_color: "#1a5490",
@@ -391,22 +581,33 @@
 
         document.querySelector(
           ".hero"
-        ).style.background = `linear-gradient(135deg, ${backgroundColor} 0%, #c3cfe2 100%)`;
+        ).style.background = `linear-gradient(135deg, ${primaryColor} 0%, #2c7ab8 100%)`;
         document.querySelector(
           ".navbar"
         ).style.background = `linear-gradient(135deg, ${primaryColor} 0%, #2c7ab8 100%)`;
         document.querySelector("footer").style.background = primaryColor;
 
+        const navLinks = document.querySelectorAll(".nav-link");
+        navLinks.forEach((link) => {
+          link.style.color = "#ffffff";
+        });
+
         const h1Elements = document.querySelectorAll(
-          ".hero h1, .about h2, .services h2, .portal h2, .contact h2"
+          ".about h2, .services h2, .portal h2, .contact h2"
         );
         h1Elements.forEach((el) => {
           el.style.color = primaryColor;
           el.style.fontSize = `${baseSize * 2.25}px`;
         });
 
+        const heroTitle = document.querySelector(".hero h1");
+        if (heroTitle) {
+          heroTitle.style.color = "#ffffff";
+          heroTitle.style.fontSize = `${baseSize * 2.25}px`;
+        }
+
         const h3Elements = document.querySelectorAll(
-          ".service-card h3, .info-text h3, .stat-card h3, .company-details h3, .portal-card h3, .portal-features h3, .portal-info h4"
+          ".service-card h3, .info-text h3, .stat-card h3, .portal-card h3, .portal-features h3, .portal-info h4, .quote-form-card h3"
         );
         h3Elements.forEach((el) => {
           el.style.color = primaryColor;
@@ -420,6 +621,9 @@
 
         document.querySelector(".btn-portal").style.background = primaryColor;
         document.querySelector(".btn-portal").style.fontSize = `${baseSize}px`;
+
+        document.querySelector(".btn-quote").style.background = accentColor;
+        document.querySelector(".btn-quote").style.fontSize = `${baseSize}px`;
 
         const portalLinks = document.querySelectorAll(".portal-link");
         portalLinks.forEach((link) => {
@@ -443,12 +647,11 @@
           card.style.borderLeftColor = primaryColor;
         });
 
-        document.querySelector(".company-details").style.borderLeftColor =
-          accentColor;
-
-        document.querySelector(".hero p").style.fontSize = `${
-          baseSize * 1.25
-        }px`;
+        const heroSubtitle = document.querySelector(".hero p");
+        if (heroSubtitle) {
+          heroSubtitle.style.fontSize = `${baseSize * 1.25}px`;
+          heroSubtitle.style.color = "#ffffff";
+        }
 
         document.getElementById("company-name").textContent =
           config.company_name || defaultConfig.company_name;
@@ -563,7 +766,7 @@
           if (b) {
             var d = b.createElement("script");
             d.innerHTML =
-              "window.__CF$cv$params={r:'99ae78a2530af390',t:'MTc2MjUzNTcxMS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
+              "window.__CF$cv$params={r:'99d07ac14747f1d1',t:'MTc2Mjg5MjMxMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
             b.getElementsByTagName("head")[0].appendChild(d);
           }
         }
