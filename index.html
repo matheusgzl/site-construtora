@@ -1,798 +1,1252 @@
-<!DOCTYPE html>
-<html lang="pt">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Década de Certezas - Construção Civil</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon" />
-    <script src="/_sdk/element_sdk.js"></script>
-    <link rel="stylesheet" href="estilos/style.css" />
-    <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
-    <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
-  </head>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <div class="container">
-        <a class="navbar-brand d-flex align-items-center gap-2" href="#inicio">
-          <img
-            src="imagens/logo-empresa2.png"
-            alt="Logo Década de Certezas"
-            class="me-2 logo-navbar"
-          />
-          <span class="brand-text">Década de Certezas</span>
-        </a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarNav"
-          aria-controls="navbarNav"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item">
-              <a class="nav-link" href="#inicio">Início</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#sobre">Sobre</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#servicos">Serviços</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#portal">Portal do Cliente</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#contato">Contato</a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+<!doctype html>
+<html lang="pt-br">
 
-    <section id="inicio" class="hero">
-      <!-- Carousel de Imagens -->
-      <div
-        id="heroCarousel"
-        class="carousel slide hero-carousel"
-        data-bs-ride="carousel"
-        data-bs-interval="5000"
-      >
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-            <img
-              src="imagens/foto1.jpg"
-              alt="Construção de edifícios modernos"
-              onerror="this.src=''; this.style.display='none';"
-              class="img-hero"
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              src="imagens/foto2.jpg"
-              alt="Obra em construção"
-              onerror="this.src=''; this.style.display='none';"
-              class="img-hero"
-            />
-          </div>
-          <div class="carousel-item">
-            <img
-              src="imagens/imagem-desfoque2.jpg"
-              alt="Estrutura de construção civil"
-              onerror="this.src=''; this.style.display='none';"
-              id="foto-canva"
-              class="img-hero"
-            />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Década de Certezas - Construção Civil</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="/_sdk/element_sdk.js"></script>
+  <link rel="stylesheet" href="estilos/style.css">
+  <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container"><a class="navbar-brand" href="#inicio">
+        <div class="logo-circle"><img src="imagens/logo-empresa2.png" alt="Logo Década de Certezas" class="logo-img">
+        </div><span id="company-name">Década de Certezas</span>
+      </a> <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span
+          class="navbar-toggler-icon"></span> </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item"><a class="nav-link" href="#inicio" data-i18n="nav_home">Início</a></li>
+          <li class="nav-item"><a class="nav-link" href="#sobre" data-i18n="nav_about">Sobre</a></li>
+          <li class="nav-item"><a class="nav-link" href="#servicos" data-i18n="nav_services">Serviços</a></li>
+          <li class="nav-item"><a class="nav-link" href="#portal" data-i18n="nav_portal">Portal do Cliente</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contato" data-i18n="nav_contact">Contato</a></li>
+        </ul>
+        <div class="language-selector"><button class="language-btn" id="language-btn" aria-label="Selecionar idioma">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24" fill="white">
+              <path
+                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" />
+            </svg></button>
+          <div class="language-dropdown" id="language-dropdown">
+            <div id="language-list"></div>
           </div>
         </div>
       </div>
-      <!-- Overlay escuro -->
-      <div class="hero-overlay"></div>
-      <!-- Conteúdo do Hero -->
-      <div class="container hero-content">
-        <h1 id="hero-title">Construindo o Futuro com Certeza</h1>
-        <p id="hero-subtitle">Excelência em construção desde 2023</p>
-        <a href="#contato" class="cta-button">Solicite um Orçamento</a>
+    </div>
+  </nav>
+  <section id="inicio" class="hero"><!-- Carrossel de Imagens -->
+    <div id="heroCarousel" class="carousel slide hero-carousel" data-bs-ride="carousel" data-bs-interval="5000">
+      <div class="carousel-indicators"><button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0"
+          class="active" aria-current="true" aria-label="Slide 1"></button> <button type="button"
+          data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button> <button type="button"
+          data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button> <button type="button"
+          data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
       </div>
-    </section>
-
-    <section id="sobre" class="about">
-      <div class="container">
-        <h2 id="about-title">Sobre a Década de Certezas</h2>
-        <div class="row g-4 align-items-center">
-          <div class="col-lg-6">
-            <div class="about-text">
-              <p>
-                A <strong>Década de Certezas</strong> é uma empresa de
-                construção civil sediada em Faro, dedicada a oferecer soluções
-                completas em construção de edifícios residenciais e não
-                residenciais.
-              </p>
-              <p>
-                Desde a nossa constituição em maio de 2023, temos nos destacado
-                pela qualidade dos nossos serviços, compromisso com prazos e
-                satisfação total dos nossos clientes.
-              </p>
-              <p>
-                A nossa equipa especializada garante execução impecável em todas
-                as fases do projeto, desde a construção até aos acabamentos
-                finais.
-              </p>
+      <div class="carousel-inner">
+        <div class="carousel-item active"><img src="imagens/foto1.jpg" alt="Construção Civil"
+            onerror="this.src=''; this.alt='Imagem não disponível'; this.style.display='none';">
+        </div>
+        <div class="carousel-item"><img src="imagens/casa-luxo.jpg" alt="Casa de Luxo"
+            onerror="this.src=''; this.alt='Imagem não disponível'; this.style.display='none';">
+        </div>
+        <div class="carousel-item"><img src="imagens/foto2.jpg" alt="execução de obra"
+            onerror="this.src=''; this.alt='Imagem não disponível'; this.style.display='none';">
+        </div>
+        <div class="carousel-item"><img src="imagens/modelo-de-casa-3d-com-arquitetura-moderna (1).jpg"
+            alt="recebendo chave" onerror="this.src=''; this.alt='Imagem não disponível'; this.style.display='none';">
+        </div>
+      </div>
+    </div><!-- Overlay -->
+    <div class="hero-overlay"></div><!-- Conteúdo -->
+    <div class="container hero-content">
+      <h1 id="hero-title" data-i18n="hero_title">Construindo o Futuro com Certeza</h1>
+      <p id="hero-subtitle" data-i18n="hero_subtitle">Excelência em construção desde 2023</p><a href="#contacto"
+        class="cta-button" data-i18n="cta_button">Solicite um Orçamento</a>
+    </div>
+  </section>
+  <section id="sobre" class="about">
+    <div class="container">
+      <h2 id="about-title" data-i18n="about_title">Sobre a Década de Certezas</h2>
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <div class="about-text">
+            <p data-i18n="about_p1">A <strong>Década de Certezas</strong> é uma empresa de construção civil sediada em
+              Faro, dedicada a oferecer soluções completas em construção de edifícios residenciais e não residenciais.
+            </p>
+            <p data-i18n="about_p2">Desde a nossa constituição em maio de 2023, temos nos destacado pela qualidade dos
+              nossos serviços, compromisso com prazos e satisfação total dos nossos clientes.</p>
+            <p data-i18n="about_p3">A nossa equipa especializada garante execução impecável em todas as fases do
+              projeto, desde a construção até aos acabamentos finais.</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="row g-3">
+            <div class="col-6">
+              <div class="stat-card">
+                <h3>2</h3>
+                <p data-i18n="stat_experience">Anos de Experiência</p>
+              </div>
             </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="row g-3">
-              <div class="col-6">
-                <div class="stat-card">
-                  <h3>2</h3>
-                  <p>Anos de Experiência</p>
-                </div>
+            <div class="col-6">
+              <div class="stat-card">
+                <h3>100%</h3>
+                <p data-i18n="stat_commitment">Compromisso</p>
               </div>
-              <div class="col-6">
-                <div class="stat-card">
-                  <h3>100%</h3>
-                  <p>Compromisso</p>
-                </div>
+            </div>
+            <div class="col-6">
+              <div class="stat-card">
+                <h3>5</h3>
+                <p data-i18n="stat_areas">Áreas de Atuação</p>
               </div>
-              <div class="col-6">
-                <div class="stat-card">
-                  <h3>5</h3>
-                  <p>Áreas de Atuação</p>
-                </div>
-              </div>
-              <div class="col-6">
-                <div class="stat-card">
-                  <h3>⭐</h3>
-                  <p>Qualidade Garantida</p>
-                </div>
+            </div>
+            <div class="col-6">
+              <div class="stat-card">
+                <h3>⭐</h3>
+                <p data-i18n="stat_quality">Qualidade Garantida</p>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <section id="servicos" class="services">
-      <div class="container">
-        <h2 id="services-title">Os Nossos Serviços</h2>
-        <div class="row g-4">
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="service-card">
-              <div class="service-icon">🏢</div>
-              <h3>Construção de Edifícios</h3>
-              <p>
-                Construção de edifícios residenciais e não residenciais com
-                qualidade e segurança garantidas.
-              </p>
+    </div>
+  </section>
+  <section id="servicos" class="services">
+    <div class="container">
+      <h2 id="services-title" data-i18n="services_title">Os Nossos Serviços</h2>
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon">
+              🏢
             </div>
+            <h3 data-i18n="service1_title">Construção de Edifícios</h3>
+            <p data-i18n="service1_desc">Construção de edifícios residenciais e não residenciais com qualidade e
+              segurança garantidas.</p>
           </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="service-card">
-              <div class="service-icon">🔨</div>
-              <h3>Revestimento de Pavimentos</h3>
-              <p>
-                Aplicação profissional de revestimentos em pavimentos e paredes
-                com acabamentos perfeitos.
-              </p>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon">
+              🔨
             </div>
+            <h3 data-i18n="service2_title">Revestimento de Pavimentos</h3>
+            <p data-i18n="service2_desc">Aplicação profissional de revestimentos em pavimentos e paredes com acabamentos
+              perfeitos.</p>
           </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="service-card">
-              <div class="service-icon">🎨</div>
-              <h3>Pintura e Vidros</h3>
-              <p>
-                Serviços especializados de pintura e colocação de vidros para
-                todos os tipos de projetos.
-              </p>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon">
+              🎨
             </div>
+            <h3 data-i18n="service3_title">Pintura e Vidros</h3>
+            <p data-i18n="service3_desc">Serviços especializados de pintura e colocação de vidros para todos os tipos de
+              projetos.</p>
           </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="service-card">
-              <div class="service-icon">✨</div>
-              <h3>Limpeza Industrial</h3>
-              <p>
-                Limpeza profissional em edifícios e equipamentos industriais com
-                equipas especializadas.
-              </p>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon">
+              ✨
             </div>
+            <h3 data-i18n="service4_title">Limpeza Industrial</h3>
+            <p data-i18n="service4_desc">Limpeza profissional em edifícios e equipamentos industriais com equipas
+              especializadas.</p>
           </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <div class="service-card">
-              <div class="service-icon">🧹</div>
-              <h3>Limpeza Geral</h3>
-              <p>
-                Serviços completos de limpeza geral em edifícios, garantindo
-                ambientes impecáveis.
-              </p>
+        </div>
+        <div class="col-12 col-md-6 col-lg-4">
+          <div class="service-card">
+            <div class="service-icon">
+              🧹
+            </div>
+            <h3 data-i18n="service5_title">Limpeza Geral</h3>
+            <p data-i18n="service5_desc">Serviços completos de limpeza geral em edifícios, garantindo ambientes
+              impecáveis.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="portal" class="portal">
+    <div class="container">
+      <h2 id="portal-title" data-i18n="portal_title">Portal do Cliente</h2>
+      <p class="text-center mb-5" data-i18n="portal_subtitle">Aceda à sua área pessoal para acompanhar projetos,
+        documentos e faturas</p>
+      <div class="row g-4 justify-content-center">
+        <div class="col-12 col-md-6 col-lg-5">
+          <div class="portal-card">
+            <h3 data-i18n="portal_access">Acesso ao Portal</h3>
+            <form id="portal-form" class="portal-form">
+              <div class="mb-3"><label for="email" class="form-label" data-i18n="form_email">Email</label> <input
+                  type="email" class="form-control" id="email" placeholder="seu@email.com" required>
+              </div>
+              <div class="mb-3"><label for="password" class="form-label" data-i18n="form_password">Palavra-passe</label>
+                <input type="password" class="form-control" id="password" placeholder="••••••••" required>
+              </div><button type="submit" class="btn btn-portal w-100" data-i18n="portal_login">Entrar no
+                Portal</button>
+              <div class="text-center mt-3"><a href="#" class="portal-link" data-i18n="forgot_password">Esqueceu a
+                  palavra-passe?</a>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-5">
+          <div class="portal-features">
+            <h3 class="mb-4" data-i18n="portal_features">Funcionalidades do Portal</h3>
+            <div class="feature-item">
+              <div class="feature-icon">
+                📊
+              </div>
+              <div class="feature-text">
+                <h4 data-i18n="feature1_title">Acompanhamento de Projetos</h4>
+                <p data-i18n="feature1_desc">Veja o progresso das suas obras em tempo real</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                📄
+              </div>
+              <div class="feature-text">
+                <h4 data-i18n="feature2_title">Documentos</h4>
+                <p data-i18n="feature2_desc">Aceda a contratos, plantas e relatórios</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                💰
+              </div>
+              <div class="feature-text">
+                <h4 data-i18n="feature3_title">Faturas e Pagamentos</h4>
+                <p data-i18n="feature3_desc">Consulte faturas e histórico de pagamentos</p>
+              </div>
+            </div>
+            <div class="feature-item">
+              <div class="feature-icon">
+                💬
+              </div>
+              <div class="feature-text">
+                <h4 data-i18n="feature4_title">Comunicação Direta</h4>
+                <p data-i18n="feature4_desc">Envie mensagens para a nossa equipa</p>
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </section>
-    <section id="portal" class="portal">
-      <div class="container">
-        <h2 id="portal-title">Portal do Cliente</h2>
-        <p class="text-center mb-5">
-          Aceda à sua área pessoal para acompanhar projetos, documentos e
-          faturas
-        </p>
-        <div class="row g-4 justify-content-center">
-          <div class="col-12 col-md-6 col-lg-5">
-            <div class="portal-card">
-              <h3>Acesso ao Portal</h3>
-              <form id="portal-form" class="portal-form">
-                <div class="mb-3">
-                  <label for="email" class="form-label">Email</label>
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="email"
-                    placeholder="seu@email.com"
-                    required
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="password" class="form-label">Palavra-passe</label>
-                  <input
-                    type="password"
-                    class="form-control"
-                    id="password"
-                    placeholder="••••••••"
-                    required
-                  />
-                </div>
-                <button type="submit" class="btn btn-portal w-100">
-                  Entrar no Portal
-                </button>
-                <div class="text-center mt-3">
-                  <a href="#" class="portal-link">Esqueceu a palavra-passe?</a>
-                </div>
-              </form>
-            </div>
+      <div class="row mt-5">
+        <div class="col-12">
+          <div class="portal-info">
+            <h4 data-i18n="portal_no_access">Ainda não tem acesso?</h4>
+            <p data-i18n="portal_contact">Se é nosso cliente e ainda não tem credenciais de acesso ao portal, entre em
+              contato connosco através do email <strong>info@decadadecertezas.pt</strong> ou pela secção de contato
+              abaixo.</p>
           </div>
-          <div class="col-12 col-md-6 col-lg-5">
-            <div class="portal-features">
-              <h3 class="mb-4">Funcionalidades do Portal</h3>
-              <div class="feature-item">
-                <div class="feature-icon">📊</div>
-                <div class="feature-text">
-                  <h4>Acompanhamento de Projetos</h4>
-                  <p>Veja o progresso das suas obras em tempo real</p>
-                </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section id="contato" class="contact">
+    <div class="container">
+      <h2 id="contact-title" data-i18n="contact_title">Entre em Contato</h2>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="contact-info">
+            <div class="info-item">
+              <div class="info-icon">
+                📍
               </div>
-              <div class="feature-item">
-                <div class="feature-icon">📄</div>
-                <div class="feature-text">
-                  <h4>Documentos</h4>
-                  <p>Aceda a contratos, plantas e relatórios</p>
-                </div>
+              <div class="info-text">
+                <h3 data-i18n="contact_address_title">Morada</h3>
+                <p>Rua do Vale da Amoreira, Nº 1, 6º. Esqº.<br>
+                  8005-334 Faro</p>
               </div>
-              <div class="feature-item">
-                <div class="feature-icon">💰</div>
-                <div class="feature-text">
-                  <h4>Faturas e Pagamentos</h4>
-                  <p>Consulte faturas e histórico de pagamentos</p>
-                </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">
+                📧
               </div>
-              <div class="feature-item">
-                <div class="feature-icon">💬</div>
-                <div class="feature-text">
-                  <h4>Comunicação Direta</h4>
-                  <p>Envie mensagens para a nossa equipa</p>
-                </div>
+              <div class="info-text">
+                <h3 data-i18n="contact_email_title">Email</h3>
+                <p>info@decadadecertezas.pt</p>
+              </div>
+            </div>
+            <div class="info-item">
+              <div class="info-icon">
+                📞
+              </div>
+              <div class="info-text">
+                <h3 data-i18n="contact_phone_title">Telefone</h3>
+                <p data-i18n="contact_phone_text">Entre em contato para mais informações</p>
               </div>
             </div>
           </div>
         </div>
-        <div class="row mt-5">
-          <div class="col-12">
-            <div class="portal-info">
-              <h4>Ainda não tem acesso?</h4>
-              <p>
-                Se é nosso cliente e ainda não tem credenciais de acesso ao
-                portal, entre em contato connosco através do email
-                <strong>info@decadadecertezas.pt</strong> ou pela secção de
-                contato abaixo.
-              </p>
-            </div>
+        <div class="col-lg-6">
+          <div class="quote-form-card">
+            <h3 data-i18n="quote_title">📋 Solicite um Orçamento</h3>
+            <form id="quote-form" class="quote-form" novalidate>
+              <div class="mb-3"><label for="quote-name" class="form-label" data-i18n="quote_name">Nome Completo
+                  *</label> <input type="text" class="form-control" id="quote-name"
+                  data-i18n-placeholder="quote_name_placeholder" placeholder="Seu nome completo" required>
+              </div>
+              <div class="mb-3"><label for="quote-email" class="form-label" data-i18n="quote_email">Email *</label>
+                <input type="email" class="form-control" id="quote-email" placeholder="seu@email.com" required>
+              </div>
+              <div class="mb-3"><label class="form-label" data-i18n="quote_phone">Telefone *</label>
+                <div class="row g-2">
+                  <div class="col-4"><select class="form-control" id="quote-country-code" required>
+                      <option value="+93">🇦🇫 +93</option>
+                      <option value="+27">🇿🇦 +27</option>
+                      <option value="+355">🇦🇱 +355</option>
+                      <option value="+49">🇩🇪 +49</option>
+                      <option value="+376">🇦🇩 +376</option>
+                      <option value="+244">🇦🇴 +244</option>
+                      <option value="+966">🇸🇦 +966</option>
+                      <option value="+213">🇩🇿 +213</option>
+                      <option value="+54">🇦🇷 +54</option>
+                      <option value="+374">🇦🇲 +374</option>
+                      <option value="+61">🇦🇺 +61</option>
+                      <option value="+43">🇦🇹 +43</option>
+                      <option value="+994">🇦🇿 +994</option>
+                      <option value="+973">🇧🇭 +973</option>
+                      <option value="+880">🇧🇩 +880</option>
+                      <option value="+32">🇧🇪 +32</option>
+                      <option value="+501">🇧🇿 +501</option>
+                      <option value="+229">🇧🇯 +229</option>
+                      <option value="+375">🇧🇾 +375</option>
+                      <option value="+591">🇧🇴 +591</option>
+                      <option value="+387">🇧🇦 +387</option>
+                      <option value="+267">🇧🇼 +267</option>
+                      <option value="+55">🇧🇷 +55</option>
+                      <option value="+673">🇧🇳 +673</option>
+                      <option value="+359">🇧🇬 +359</option>
+                      <option value="+226">🇧🇫 +226</option>
+                      <option value="+257">🇧🇮 +257</option>
+                      <option value="+975">🇧🇹 +975</option>
+                      <option value="+238">🇨🇻 +238</option>
+                      <option value="+855">🇰🇭 +855</option>
+                      <option value="+237">🇨🇲 +237</option>
+                      <option value="+1">🇨🇦 +1</option>
+                      <option value="+7">🇰🇿 +7</option>
+                      <option value="+235">🇹🇩 +235</option>
+                      <option value="+56">🇨🇱 +56</option>
+                      <option value="+86">🇨🇳 +86</option>
+                      <option value="+357">🇨🇾 +357</option>
+                      <option value="+57">🇨🇴 +57</option>
+                      <option value="+269">🇰🇲 +269</option>
+                      <option value="+242">🇨🇬 +242</option>
+                      <option value="+850">🇰🇵 +850</option>
+                      <option value="+82">🇰🇷 +82</option>
+                      <option value="+225">🇨🇮 +225</option>
+                      <option value="+506">🇨🇷 +506</option>
+                      <option value="+385">🇭🇷 +385</option>
+                      <option value="+53">🇨🇺 +53</option>
+                      <option value="+45">🇩🇰 +45</option>
+                      <option value="+253">🇩🇯 +253</option>
+                      <option value="+20">🇪🇬 +20</option>
+                      <option value="+503">🇸🇻 +503</option>
+                      <option value="+971">🇦🇪 +971</option>
+                      <option value="+593">🇪🇨 +593</option>
+                      <option value="+291">🇪🇷 +291</option>
+                      <option value="+421">🇸🇰 +421</option>
+                      <option value="+386">🇸🇮 +386</option>
+                      <option value="+34">🇪🇸 +34</option>
+                      <option value="+1">🇺🇸 +1</option>
+                      <option value="+372">🇪🇪 +372</option>
+                      <option value="+268">🇸🇿 +268</option>
+                      <option value="+251">🇪🇹 +251</option>
+                      <option value="+679">🇫🇯 +679</option>
+                      <option value="+63">🇵🇭 +63</option>
+                      <option value="+358">🇫🇮 +358</option>
+                      <option value="+33">🇫🇷 +33</option>
+                      <option value="+241">🇬🇦 +241</option>
+                      <option value="+220">🇬🇲 +220</option>
+                      <option value="+233">🇬🇭 +233</option>
+                      <option value="+995">🇬🇪 +995</option>
+                      <option value="+30">🇬🇷 +30</option>
+                      <option value="+502">🇬🇹 +502</option>
+                      <option value="+592">🇬🇾 +592</option>
+                      <option value="+224">🇬🇳 +224</option>
+                      <option value="+240">🇬🇶 +240</option>
+                      <option value="+245">🇬🇼 +245</option>
+                      <option value="+509">🇭🇹 +509</option>
+                      <option value="+31">🇳🇱 +31</option>
+                      <option value="+504">🇭🇳 +504</option>
+                      <option value="+852">🇭🇰 +852</option>
+                      <option value="+36">🇭🇺 +36</option>
+                      <option value="+967">🇾🇪 +967</option>
+                      <option value="+677">🇸🇧 +677</option>
+                      <option value="+91">🇮🇳 +91</option>
+                      <option value="+62">🇮🇩 +62</option>
+                      <option value="+98">🇮🇷 +98</option>
+                      <option value="+964">🇮🇶 +964</option>
+                      <option value="+353">🇮🇪 +353</option>
+                      <option value="+354">🇮🇸 +354</option>
+                      <option value="+972">🇮🇱 +972</option>
+                      <option value="+39">🇮🇹 +39</option>
+                      <option value="+81">🇯🇵 +81</option>
+                      <option value="+962">🇯🇴 +962</option>
+                      <option value="+254">🇰🇪 +254</option>
+                      <option value="+996">🇰🇬 +996</option>
+                      <option value="+965">🇰🇼 +965</option>
+                      <option value="+856">🇱🇦 +856</option>
+                      <option value="+266">🇱🇸 +266</option>
+                      <option value="+371">🇱🇻 +371</option>
+                      <option value="+961">🇱🇧 +961</option>
+                      <option value="+231">🇱🇷 +231</option>
+                      <option value="+218">🇱🇾 +218</option>
+                      <option value="+423">🇱🇮 +423</option>
+                      <option value="+370">🇱🇹 +370</option>
+                      <option value="+352">🇱🇺 +352</option>
+                      <option value="+853">🇲🇴 +853</option>
+                      <option value="+389">🇲🇰 +389</option>
+                      <option value="+261">🇲🇬 +261</option>
+                      <option value="+60">🇲🇾 +60</option>
+                      <option value="+265">🇲🇼 +265</option>
+                      <option value="+960">🇲🇻 +960</option>
+                      <option value="+223">🇲🇱 +223</option>
+                      <option value="+356">🇲🇹 +356</option>
+                      <option value="+212">🇲🇦 +212</option>
+                      <option value="+230">🇲🇺 +230</option>
+                      <option value="+222">🇲🇷 +222</option>
+                      <option value="+52">🇲🇽 +52</option>
+                      <option value="+95">🇲🇲 +95</option>
+                      <option value="+373">🇲🇩 +373</option>
+                      <option value="+377">🇲🇨 +377</option>
+                      <option value="+976">🇲🇳 +976</option>
+                      <option value="+382">🇲🇪 +382</option>
+                      <option value="+258">🇲🇿 +258</option>
+                      <option value="+264">🇳🇦 +264</option>
+                      <option value="+977">🇳🇵 +977</option>
+                      <option value="+505">🇳🇮 +505</option>
+                      <option value="+227">🇳🇪 +227</option>
+                      <option value="+234">🇳🇬 +234</option>
+                      <option value="+47">🇳🇴 +47</option>
+                      <option value="+64">🇳🇿 +64</option>
+                      <option value="+968">🇴🇲 +968</option>
+                      <option value="+31">🇳🇱 +31</option>
+                      <option value="+970">🇵🇸 +970</option>
+                      <option value="+507">🇵🇦 +507</option>
+                      <option value="+675">🇵🇬 +675</option>
+                      <option value="+92">🇵🇰 +92</option>
+                      <option value="+595">🇵🇾 +595</option>
+                      <option value="+51">🇵🇪 +51</option>
+                      <option value="+48">🇵🇱 +48</option>
+                      <option value="+351" selected>🇵🇹 +351</option>
+                      <option value="+974">🇶🇦 +974</option>
+                      <option value="+254">🇰🇪 +254</option>
+                      <option value="+236">🇨🇫 +236</option>
+                      <option value="+420">🇨🇿 +420</option>
+                      <option value="+243">🇨🇩 +243</option>
+                      <option value="+40">🇷🇴 +40</option>
+                      <option value="+250">🇷🇼 +250</option>
+                      <option value="+7">🇷🇺 +7</option>
+                      <option value="+221">🇸🇳 +221</option>
+                      <option value="+381">🇷🇸 +381</option>
+                      <option value="+248">🇸🇨 +248</option>
+                      <option value="+232">🇸🇱 +232</option>
+                      <option value="+65">🇸🇬 +65</option>
+                      <option value="+963">🇸🇾 +963</option>
+                      <option value="+252">🇸🇴 +252</option>
+                      <option value="+94">🇱🇰 +94</option>
+                      <option value="+211">🇸🇸 +211</option>
+                      <option value="+249">🇸🇩 +249</option>
+                      <option value="+46">🇸🇪 +46</option>
+                      <option value="+41">🇨🇭 +41</option>
+                      <option value="+597">🇸🇷 +597</option>
+                      <option value="+886">🇹🇼 +886</option>
+                      <option value="+992">🇹🇯 +992</option>
+                      <option value="+255">🇹🇿 +255</option>
+                      <option value="+66">🇹🇭 +66</option>
+                      <option value="+670">🇹🇱 +670</option>
+                      <option value="+228">🇹🇬 +228</option>
+                      <option value="+676">🇹🇴 +676</option>
+                      <option value="+216">🇹🇳 +216</option>
+                      <option value="+993">🇹🇲 +993</option>
+                      <option value="+90">🇹🇷 +90</option>
+                      <option value="+380">🇺🇦 +380</option>
+                      <option value="+256">🇺🇬 +256</option>
+                      <option value="+598">🇺🇾 +598</option>
+                      <option value="+998">🇺🇿 +998</option>
+                      <option value="+678">🇻🇺 +678</option>
+                      <option value="+58">🇻🇪 +58</option>
+                      <option value="+84">🇻🇳 +84</option>
+                      <option value="+260">🇿🇲 +260</option>
+                      <option value="+263">🇿🇼 +263</option>
+                      <option value="+44">🇬🇧 +44</option>
+                    </select>
+                  </div>
+                  <div class="col-8"><input type="tel" class="form-control" id="quote-phone"
+                      data-i18n-placeholder="quote_phone_placeholder" placeholder="Número de telefone" maxlength="18"
+                      required>
+                  </div>
+                </div><small class="text-muted" data-i18n="quote_phone_hint">Digite o número completo do seu
+                  país</small>
+              </div>
+              <div class="mb-3"><label for="quote-service" class="form-label" data-i18n="quote_service">Tipo de Serviço
+                  *</label> <select class="form-control" id="quote-service" required>
+                  <option value="" data-i18n="quote_service_select">Selecione um serviço</option>
+                  <option value="construcao" data-i18n="quote_service_construction">Construção de Edifícios</option>
+                  <option value="revestimento" data-i18n="quote_service_flooring">Revestimento de Pavimentos</option>
+                  <option value="pintura" data-i18n="quote_service_painting">Pintura e Vidros</option>
+                  <option value="limpeza-industrial" data-i18n="quote_service_industrial">Limpeza Industrial</option>
+                  <option value="limpeza-geral" data-i18n="quote_service_general">Limpeza Geral</option>
+                  <option value="outro" data-i18n="quote_service_other">Outro</option>
+                </select>
+              </div>
+              <div class="mb-3"><label for="quote-location" class="form-label" data-i18n="quote_location">Localização do
+                  Projeto</label> <input type="text" class="form-control" id="quote-location"
+                  data-i18n-placeholder="quote_location_placeholder" placeholder="Cidade/Região">
+              </div>
+              <div class="mb-3"><label for="quote-message" class="form-label" data-i18n="quote_message">Descrição do
+                  Projeto *</label> <textarea class="form-control" id="quote-message" rows="4"
+                  data-i18n-placeholder="quote_message_placeholder" placeholder="Descreva o seu projeto em detalhe..."
+                  required></textarea>
+              </div><button type="submit" class="btn-quote w-100" id="submit-btn" data-i18n="quote_submit">Enviar Pedido
+                de Orçamento</button>
+              <div id="form-message" class="form-message" style="display: none;"></div>
+            </form>
           </div>
         </div>
       </div>
-    </section>
-
-    <section id="contato" class="contact">
-      <div class="container">
-        <h2 id="contact-title">Entre em Contacto</h2>
-        <div class="row g-4">
-          <div class="col-lg-6">
-            <div class="contact-info">
-              <div class="info-item">
-                <div class="info-icon">📍</div>
-                <div class="info-text">
-                  <h3>Morada</h3>
-                  <p>
-                    Rua do Vale da Amoreira, Nº 1, 6º. Esqº.<br />
-                    8005-334 Faro
-                  </p>
-                </div>
-              </div>
-              <div class="info-item">
-                <div class="info-icon">📧</div>
-                <div class="info-text">
-                  <h3>Email</h3>
-                  <p>info@decadadecertezas.pt</p>
-                </div>
-              </div>
-              <div class="info-item">
-                <div class="info-icon">📞</div>
-                <div class="info-text">
-                  <h3>Telefone</h3>
-                  <p>Entre em contacto para mais informações</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="quote-form-card">
-              <h3>📋 Solicite um Orçamento</h3>
-              <form id="quote-form" class="quote-form" novalidate>
-                <div class="mb-3">
-                  <label for="quote-name" class="form-label"
-                    >Nome Completo *</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="quote-name"
-                    placeholder="Seu nome completo"
-                    required
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="quote-email" class="form-label">Email *</label>
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="quote-email"
-                    placeholder="seu@email.com"
-                    required
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="quote-phone" class="form-label">Telefone *</label>
-                  <input
-                    type="tel"
-                    class="form-control"
-                    id="quote-phone"
-                    placeholder="+351 912 345 678"
-                    required
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="quote-service" class="form-label"
-                    >Tipo de Serviço *</label
-                  >
-                  <select class="form-control" id="quote-service" required>
-                    <option value="">Selecione um serviço</option>
-                    <option value="construcao">Construção de Edifícios</option>
-                    <option value="revestimento">
-                      Revestimento de Pavimentos
-                    </option>
-                    <option value="pintura">Pintura e Vidros</option>
-                    <option value="limpeza-industrial">
-                      Limpeza Industrial
-                    </option>
-                    <option value="limpeza-geral">Limpeza Geral</option>
-                    <option value="outro">Outro</option>
-                  </select>
-                </div>
-                <div class="mb-3">
-                  <label for="quote-location" class="form-label"
-                    >Localização do Projeto</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="quote-location"
-                    placeholder="Cidade/Região"
-                  />
-                </div>
-                <div class="mb-3">
-                  <label for="quote-message" class="form-label"
-                    >Descrição do Projeto *</label
-                  >
-                  <textarea
-                    class="form-control"
-                    id="quote-message"
-                    rows="4"
-                    placeholder="Descreva o seu projeto em detalhe..."
-                    required
-                  ></textarea>
-                </div>
-                <button type="submit" class="btn-quote w-100" id="submit-btn">
-                  Enviar Pedido de Orçamento
-                </button>
-                <div
-                  id="form-message"
-                  class="form-message"
-                  style="display: none"
-                ></div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-    <footer>
-      <div class="container">
-        <p id="footer-text">
-          © 2024 Década de Certezas. Todos os direitos reservados.
-        </p>
-      </div>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      // Portal form handling
-      document
-        .getElementById("portal-form")
-        .addEventListener("submit", function (e) {
-          e.preventDefault();
-
-          const email = document.getElementById("email").value;
-          const password = document.getElementById("password").value;
-
-          // Create message element
-          const messageDiv = document.createElement("div");
-          messageDiv.className = "alert alert-info mt-3";
-          messageDiv.style.textAlign = "center";
-          messageDiv.innerHTML =
-            "<strong>Demo:</strong> Esta é uma demonstração. Em produção, o sistema faria login no portal do cliente.";
-
-          // Remove any existing messages
-          const existingMessage = document.querySelector(".portal-form .alert");
-          if (existingMessage) {
-            existingMessage.remove();
-          }
-
-          // Add message after form
-          this.appendChild(messageDiv);
-
-          // Clear form after 3 seconds
-          setTimeout(() => {
-            messageDiv.remove();
-          }, 5000);
-        });
-
-      // Quote form handling
-      document
-        .getElementById("quote-form")
-        .addEventListener("submit", async function (e) {
-          e.preventDefault();
-
-          // Check if form is valid
-          if (!this.checkValidity()) {
-            // Trigger browser validation messages
-            this.classList.add("was-validated");
-            return;
-          }
-
-          const submitBtn = document.getElementById("submit-btn");
-          const messageDiv = document.getElementById("form-message");
-
-          // Get form data
-          const formData = {
-            name: document.getElementById("quote-name").value,
-            email: document.getElementById("quote-email").value,
-            phone: document.getElementById("quote-phone").value,
-            service: document.getElementById("quote-service").value,
-            location: document.getElementById("quote-location").value,
-            message: document.getElementById("quote-message").value,
-          };
-
-          // Disable button and show loading
-          submitBtn.disabled = true;
-          submitBtn.textContent = "A enviar...";
-          messageDiv.style.display = "none";
-
-          // Simulate sending (in production, this would call your PHP script)
-          try {
-            // In production, uncomment this and replace with your PHP endpoint:
-            // const response = await fetch('send-quote.php', {
-            //   method: 'POST',
-            //   headers: {
-            //     'Content-Type': 'application/json',
-            //   },
-            //   body: JSON.stringify(formData)
-            // });
-            // const result = await response.json();
-
-            // Simulate delay
-            await new Promise((resolve) => setTimeout(resolve, 1500));
-
-            // Show success message
-            messageDiv.className = "form-message success";
-            messageDiv.textContent =
-              "✓ Pedido enviado com sucesso! Entraremos em contato em breve.";
-            messageDiv.style.display = "block";
-
-            // Reset form
-            this.reset();
-            this.classList.remove("was-validated");
-          } catch (error) {
-            // Show error message
-            messageDiv.className = "form-message error";
-            messageDiv.textContent =
-              "✗ Erro ao enviar pedido. Por favor, tente novamente ou contate-nos diretamente.";
-            messageDiv.style.display = "block";
-          } finally {
-            // Re-enable button
-            submitBtn.disabled = false;
-            submitBtn.textContent = "Enviar Pedido de Orçamento";
-
-            // Hide message after 5 seconds
-            setTimeout(() => {
-              messageDiv.style.display = "none";
-            }, 5000);
-          }
-        });
-
-      const defaultConfig = {
-        company_name: "Década de Certezas",
+    </div>
+  </section>
+  <footer>
+    <div class="container">
+      <p id="footer-text" data-i18n="footer_text">© 2024 Década de Certezas. Todos os direitos reservados.</p>
+    </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script>
+    // Translation system
+    const translations = {
+      pt: {
+        nav_home: "Início",
+        nav_about: "Sobre",
+        nav_services: "Serviços",
+        nav_portal: "Portal do Cliente",
+        nav_contact: "Contacto",
         hero_title: "Construindo o Futuro com Certeza",
         hero_subtitle: "Excelência em construção desde 2023",
+        cta_button: "Solicite um Orçamento",
         about_title: "Sobre a Década de Certezas",
+        about_p1: "A <strong>Década de Certezas</strong> é uma empresa de construção civil sediada em Faro, dedicada a oferecer soluções completas em construção de edifícios residenciais e não residenciais.",
+        about_p2: "Desde a nossa constituição em maio de 2023, temos nos destacado pela qualidade dos nossos serviços, compromisso com prazos e satisfação total dos nossos clientes.",
+        about_p3: "A nossa equipa especializada garante execução impecável em todas as fases do projeto, desde a construção até aos acabamentos finais.",
+        stat_experience: "Anos de Experiência",
+        stat_commitment: "Compromisso",
+        stat_areas: "Áreas de Atuação",
+        stat_quality: "Qualidade Garantida",
         services_title: "Os Nossos Serviços",
+        service1_title: "Construção de Edifícios",
+        service1_desc: "Construção de edifícios residenciais e não residenciais com qualidade e segurança garantidas.",
+        service2_title: "Revestimento de Pavimentos",
+        service2_desc: "Aplicação profissional de revestimentos em pavimentos e paredes com acabamentos perfeitos.",
+        service3_title: "Pintura e Vidros",
+        service3_desc: "Serviços especializados de pintura e colocação de vidros para todos os tipos de projetos.",
+        service4_title: "Limpeza Industrial",
+        service4_desc: "Limpeza profissional em edifícios e equipamentos industriais com equipas especializadas.",
+        service5_title: "Limpeza Geral",
+        service5_desc: "Serviços completos de limpeza geral em edifícios, garantindo ambientes impecáveis.",
         portal_title: "Portal do Cliente",
+        portal_subtitle: "Aceda à sua área pessoal para acompanhar projetos, documentos e faturas",
+        portal_access: "Acesso ao Portal",
+        form_email: "Email",
+        form_password: "Palavra-passe",
+        portal_login: "Entrar no Portal",
+        forgot_password: "Esqueceu a palavra-passe?",
+        portal_features: "Funcionalidades do Portal",
+        feature1_title: "Acompanhamento de Projetos",
+        feature1_desc: "Veja o progresso das suas obras em tempo real",
+        feature2_title: "Documentos",
+        feature2_desc: "Aceda a contratos, plantas e relatórios",
+        feature3_title: "Faturas e Pagamentos",
+        feature3_desc: "Consulte faturas e histórico de pagamentos",
+        feature4_title: "Comunicação Direta",
+        feature4_desc: "Envie mensagens para a nossa equipa",
+        portal_no_access: "Ainda não tem acesso?",
+        portal_contact: "Se é nosso cliente e ainda não tem credenciais de acesso ao portal, entre em contacto connosco através do email <strong>info@decadadecertezas.pt</strong> ou pela secção de contacto abaixo.",
         contact_title: "Entre em Contacto",
-        footer_text: "© 2024 Década de Certezas. Todos os direitos reservados.",
-        background_color: "#f5f7fa",
-        primary_color: "#1a5490",
-        accent_color: "#e67e22",
-        text_color: "#333333",
-        surface_color: "#ffffff",
-        font_family: "Segoe UI",
-        font_size: 16,
+        contact_address_title: "Morada",
+        contact_email_title: "Email",
+        contact_phone_title: "Telefone",
+        contact_phone_text: "Entre em contacto para mais informações",
+        quote_title: "📋 Solicite um Orçamento",
+        quote_name: "Nome Completo *",
+        quote_name_placeholder: "Seu nome completo",
+        quote_email: "Email *",
+        quote_phone: "Telefone *",
+        quote_phone_placeholder: "Número de telefone",
+        quote_phone_hint: "Digite o número completo do seu país",
+        quote_service: "Tipo de Serviço *",
+        quote_service_select: "Selecione um serviço",
+        quote_service_construction: "Construção de Edifícios",
+        quote_service_flooring: "Revestimento de Pavimentos",
+        quote_service_painting: "Pintura e Vidros",
+        quote_service_industrial: "Limpeza Industrial",
+        quote_service_general: "Limpeza Geral",
+        quote_service_other: "Outro",
+        quote_location: "Localização do Projeto",
+        quote_location_placeholder: "Cidade/Região",
+        quote_message: "Descrição do Projeto *",
+        quote_message_placeholder: "Descreva o seu projeto em detalhe...",
+        quote_submit: "Enviar Pedido de Orçamento",
+        footer_text: "© 2024 Década de Certezas. Todos os direitos reservados."
+      },
+      en: {
+        nav_home: "Home",
+        nav_about: "About",
+        nav_services: "Services",
+        nav_portal: "Client Portal",
+        nav_contact: "Contact",
+        hero_title: "Building the Future with Certainty",
+        hero_subtitle: "Excellence in construction since 2023",
+        cta_button: "Request a Quote",
+        about_title: "About Década de Certezas",
+        about_p1: "<strong>Década de Certezas</strong> is a civil construction company based in Faro, dedicated to offering complete solutions in residential and non-residential building construction.",
+        about_p2: "Since our establishment in May 2023, we have stood out for the quality of our services, commitment to deadlines and total customer satisfaction.",
+        about_p3: "Our specialized team ensures impeccable execution in all phases of the project, from construction to final finishes.",
+        stat_experience: "Years of Experience",
+        stat_commitment: "Commitment",
+        stat_areas: "Areas of Operation",
+        stat_quality: "Guaranteed Quality",
+        services_title: "Our Services",
+        service1_title: "Building Construction",
+        service1_desc: "Construction of residential and non-residential buildings with guaranteed quality and safety.",
+        service2_title: "Floor Coating",
+        service2_desc: "Professional application of coatings on floors and walls with perfect finishes.",
+        service3_title: "Painting and Glass",
+        service3_desc: "Specialized painting and glass installation services for all types of projects.",
+        service4_title: "Industrial Cleaning",
+        service4_desc: "Professional cleaning in buildings and industrial equipment with specialized teams.",
+        service5_title: "General Cleaning",
+        service5_desc: "Complete general cleaning services in buildings, ensuring impeccable environments.",
+        portal_title: "Client Portal",
+        portal_subtitle: "Access your personal area to track projects, documents and invoices",
+        portal_access: "Portal Access",
+        form_email: "Email",
+        form_password: "Password",
+        portal_login: "Login to Portal",
+        forgot_password: "Forgot your password?",
+        portal_features: "Portal Features",
+        feature1_title: "Project Tracking",
+        feature1_desc: "See the progress of your projects in real time",
+        feature2_title: "Documents",
+        feature2_desc: "Access contracts, plans and reports",
+        feature3_title: "Invoices and Payments",
+        feature3_desc: "Check invoices and payment history",
+        feature4_title: "Direct Communication",
+        feature4_desc: "Send messages to our team",
+        portal_no_access: "Don't have access yet?",
+        portal_contact: "If you are our client and do not yet have portal access credentials, contact us via email <strong>info@decadadecertezas.pt</strong> or through the contact section below.",
+        contact_title: "Get in Touch",
+        contact_address_title: "Address",
+        contact_email_title: "Email",
+        contact_phone_title: "Phone",
+        contact_phone_text: "Contact us for more information",
+        quote_title: "📋 Request a Quote",
+        quote_name: "Full Name *",
+        quote_name_placeholder: "Your full name",
+        quote_email: "Email *",
+        quote_phone: "Phone *",
+        quote_phone_placeholder: "Phone number",
+        quote_phone_hint: "Enter your country's full number",
+        quote_service: "Service Type *",
+        quote_service_select: "Select a service",
+        quote_service_construction: "Building Construction",
+        quote_service_flooring: "Floor Coating",
+        quote_service_painting: "Painting and Glass",
+        quote_service_industrial: "Industrial Cleaning",
+        quote_service_general: "General Cleaning",
+        quote_service_other: "Other",
+        quote_location: "Project Location",
+        quote_location_placeholder: "City/Region",
+        quote_message: "Project Description *",
+        quote_message_placeholder: "Describe your project in detail...",
+        quote_submit: "Send Quote Request",
+        footer_text: "© 2024 Década de Certezas. All rights reserved."
+      },
+      es: {
+        nav_home: "Inicio",
+        nav_about: "Acerca de",
+        nav_services: "Servicios",
+        nav_portal: "Portal del Cliente",
+        nav_contact: "Contacto",
+        hero_title: "Construyendo el Futuro con Certeza",
+        hero_subtitle: "Excelencia en construcción desde 2023",
+        cta_button: "Solicitar Presupuesto",
+        about_title: "Acerca de Década de Certezas",
+        about_p1: "<strong>Década de Certezas</strong> es una empresa de construcción civil con sede en Faro, dedicada a ofrecer soluciones completas en construcción de edificios residenciales y no residenciales.",
+        about_p2: "Desde nuestra constitución en mayo de 2023, nos hemos destacado por la calidad de nuestros servicios, compromiso con los plazos y satisfacción total de nuestros clientes.",
+        about_p3: "Nuestro equipo especializado garantiza una ejecución impecable en todas las fases del proyecto, desde la construcción hasta los acabados finales.",
+        stat_experience: "Años de Experiencia",
+        stat_commitment: "Compromiso",
+        stat_areas: "Áreas de Actuación",
+        stat_quality: "Calidad Garantizada",
+        services_title: "Nuestros Servicios",
+        service1_title: "Construcción de Edificios",
+        service1_desc: "Construcción de edificios residenciales y no residenciales con calidad y seguridad garantizadas.",
+        service2_title: "Revestimiento de Pavimentos",
+        service2_desc: "Aplicación profesional de revestimientos en pavimentos y paredes con acabados perfectos.",
+        service3_title: "Pintura y Vidrios",
+        service3_desc: "Servicios especializados de pintura e instalación de vidrios para todo tipo de proyectos.",
+        service4_title: "Limpieza Industrial",
+        service4_desc: "Limpieza profesional en edificios y equipos industriales con equipos especializados.",
+        service5_title: "Limpieza General",
+        service5_desc: "Servicios completos de limpieza general en edificios, garantizando ambientes impecables.",
+        portal_title: "Portal del Cliente",
+        portal_subtitle: "Acceda a su área personal para seguir proyectos, documentos y facturas",
+        portal_access: "Acceso al Portal",
+        form_email: "Correo Electrónico",
+        form_password: "Contraseña",
+        portal_login: "Entrar al Portal",
+        forgot_password: "¿Olvidó su contraseña?",
+        portal_features: "Funcionalidades del Portal",
+        feature1_title: "Seguimiento de Proyectos",
+        feature1_desc: "Vea el progreso de sus obras en tiempo real",
+        feature2_title: "Documentos",
+        feature2_desc: "Acceda a contratos, planos e informes",
+        feature3_title: "Facturas y Pagos",
+        feature3_desc: "Consulte facturas e historial de pagos",
+        feature4_title: "Comunicación Directa",
+        feature4_desc: "Envíe mensajes a nuestro equipo",
+        portal_no_access: "¿Aún no tiene acceso?",
+        portal_contact: "Si es nuestro cliente y aún no tiene credenciales de acceso al portal, contáctenos a través del correo <strong>info@decadadecertezas.pt</strong> o por la sección de contacto a continuación.",
+        contact_title: "Póngase en Contacto",
+        contact_address_title: "Dirección",
+        contact_email_title: "Correo Electrónico",
+        contact_phone_title: "Teléfono",
+        contact_phone_text: "Contáctenos para más información",
+        quote_title: "📋 Solicitar Presupuesto",
+        quote_name: "Nombre Completo *",
+        quote_name_placeholder: "Su nombre completo",
+        quote_email: "Correo Electrónico *",
+        quote_phone: "Teléfono *",
+        quote_phone_placeholder: "Número de teléfono",
+        quote_phone_hint: "Ingrese el número completo de su país",
+        quote_service: "Tipo de Servicio *",
+        quote_service_select: "Seleccione un servicio",
+        quote_service_construction: "Construcción de Edificios",
+        quote_service_flooring: "Revestimiento de Pavimentos",
+        quote_service_painting: "Pintura y Vidrios",
+        quote_service_industrial: "Limpieza Industrial",
+        quote_service_general: "Limpieza General",
+        quote_service_other: "Otro",
+        quote_location: "Ubicación del Proyecto",
+        quote_location_placeholder: "Ciudad/Región",
+        quote_message: "Descripción del Proyecto *",
+        quote_message_placeholder: "Describa su proyecto en detalle...",
+        quote_submit: "Enviar Solicitud de Presupuesto",
+        footer_text: "© 2024 Década de Certezas. Todos los derechos reservados."
+      },
+      fr: {
+        nav_home: "Accueil",
+        nav_about: "À propos",
+        nav_services: "Services",
+        nav_portal: "Portail Client",
+        nav_contact: "Contact",
+        hero_title: "Construire l'Avenir avec Certitude",
+        hero_subtitle: "Excellence en construction depuis 2023",
+        cta_button: "Demander un Devis",
+        about_title: "À propos de Década de Certezas",
+        about_p1: "<strong>Década de Certezas</strong> est une entreprise de construction civile basée à Faro, dédiée à offrir des solutions complètes en construction de bâtiments résidentiels et non résidentiels.",
+        about_p2: "Depuis notre création en mai 2023, nous nous sommes distingués par la qualité de nos services, notre engagement envers les délais et la satisfaction totale de nos clients.",
+        about_p3: "Notre équipe spécialisée garantit une exécution impeccable dans toutes les phases du projet, de la construction aux finitions finales.",
+        stat_experience: "Années d'Expérience",
+        stat_commitment: "Engagement",
+        stat_areas: "Domaines d'Activité",
+        stat_quality: "Qualité Garantie",
+        services_title: "Nos Services",
+        service1_title: "Construction de Bâtiments",
+        service1_desc: "Construction de bâtiments résidentiels et non résidentiels avec qualité et sécurité garanties.",
+        service2_title: "Revêtement de Sol",
+        service2_desc: "Application professionnelle de revêtements sur sols et murs avec des finitions parfaites.",
+        service3_title: "Peinture et Vitrerie",
+        service3_desc: "Services spécialisés de peinture et d'installation de vitrages pour tous types de projets.",
+        service4_title: "Nettoyage Industriel",
+        service4_desc: "Nettoyage professionnel dans les bâtiments et équipements industriels avec des équipes spécialisées.",
+        service5_title: "Nettoyage Général",
+        service5_desc: "Services complets de nettoyage général dans les bâtiments, garantissant des environnements impeccables.",
+        portal_title: "Portail Client",
+        portal_subtitle: "Accédez à votre espace personnel pour suivre les projets, documents et factures",
+        portal_access: "Accès au Portail",
+        form_email: "Email",
+        form_password: "Mot de passe",
+        portal_login: "Se connecter au Portail",
+        forgot_password: "Mot de passe oublié?",
+        portal_features: "Fonctionnalités du Portail",
+        feature1_title: "Suivi de Projets",
+        feature1_desc: "Voyez la progression de vos travaux en temps réel",
+        feature2_title: "Documents",
+        feature2_desc: "Accédez aux contrats, plans et rapports",
+        feature3_title: "Factures et Paiements",
+        feature3_desc: "Consultez les factures et l'historique des paiements",
+        feature4_title: "Communication Directe",
+        feature4_desc: "Envoyez des messages à notre équipe",
+        portal_no_access: "Vous n'avez pas encore accès?",
+        portal_contact: "Si vous êtes notre client et n'avez pas encore d'identifiants d'accès au portail, contactez-nous par email <strong>info@decadadecertezas.pt</strong> ou via la section contact ci-dessous.",
+        contact_title: "Contactez-nous",
+        contact_address_title: "Adresse",
+        contact_email_title: "Email",
+        contact_phone_title: "Téléphone",
+        contact_phone_text: "Contactez-nous pour plus d'informations",
+        quote_title: "📋 Demander un Devis",
+        quote_name: "Nom Complet *",
+        quote_name_placeholder: "Votre nom complet",
+        quote_email: "Email *",
+        quote_phone: "Téléphone *",
+        quote_phone_placeholder: "Numéro de téléphone",
+        quote_phone_hint: "Entrez le numéro complet de votre pays",
+        quote_service: "Type de Service *",
+        quote_service_select: "Sélectionnez un service",
+        quote_service_construction: "Construction de Bâtiments",
+        quote_service_flooring: "Revêtement de Sol",
+        quote_service_painting: "Peinture et Vitrerie",
+        quote_service_industrial: "Nettoyage Industriel",
+        quote_service_general: "Nettoyage Général",
+        quote_service_other: "Autre",
+        quote_location: "Localisation du Projet",
+        quote_location_placeholder: "Ville/Région",
+        quote_message: "Description du Projet *",
+        quote_message_placeholder: "Décrivez votre projet en détail...",
+        quote_submit: "Envoyer la Demande de Devis",
+        footer_text: "© 2024 Década de Certezas. Tous droits réservés."
+      },
+      de: {
+        nav_home: "Startseite",
+        nav_about: "Über uns",
+        nav_services: "Dienstleistungen",
+        nav_portal: "Kundenportal",
+        nav_contact: "Kontakt",
+        hero_title: "Die Zukunft mit Gewissheit bauen",
+        hero_subtitle: "Exzellenz im Bauwesen seit 2023",
+        cta_button: "Angebot anfordern",
+        about_title: "Über Década de Certezas",
+        about_p1: "<strong>Década de Certezas</strong> ist ein Bauunternehmen mit Sitz in Faro, das sich der Bereitstellung kompletter Lösungen im Wohn- und Nichtwohnungsbau widmet.",
+        about_p2: "Seit unserer Gründung im Mai 2023 zeichnen wir uns durch die Qualität unserer Dienstleistungen, die Einhaltung von Fristen und die vollständige Kundenzufriedenheit aus.",
+        about_p3: "Unser spezialisiertes Team garantiert eine einwandfreie Ausführung in allen Projektphasen, vom Bau bis zu den Endarbeiten.",
+        stat_experience: "Jahre Erfahrung",
+        stat_commitment: "Engagement",
+        stat_areas: "Tätigkeitsbereiche",
+        stat_quality: "Garantierte Qualität",
+        services_title: "Unsere Dienstleistungen",
+        service1_title: "Gebäudebau",
+        service1_desc: "Bau von Wohn- und Nichtwohngebäuden mit garantierter Qualität und Sicherheit.",
+        service2_title: "Bodenbeläge",
+        service2_desc: "Professionelle Verlegung von Belägen auf Böden und Wänden mit perfekten Oberflächen.",
+        service3_title: "Malerei und Glas",
+        service3_desc: "Spezialisierte Mal- und Glasinstallationsdienste für alle Arten von Projekten.",
+        service4_title: "Industriereinigung",
+        service4_desc: "Professionelle Reinigung in Gebäuden und Industrieanlagen mit spezialisierten Teams.",
+        service5_title: "Allgemeine Reinigung",
+        service5_desc: "Komplette allgemeine Reinigungsdienste in Gebäuden, die einwandfreie Umgebungen gewährleisten.",
+        portal_title: "Kundenportal",
+        portal_subtitle: "Greifen Sie auf Ihren persönlichen Bereich zu, um Projekte, Dokumente und Rechnungen zu verfolgen",
+        portal_access: "Portalzugang",
+        form_email: "E-Mail",
+        form_password: "Passwort",
+        portal_login: "Zum Portal anmelden",
+        forgot_password: "Passwort vergessen?",
+        portal_features: "Portal-Funktionen",
+        feature1_title: "Projektverfolgung",
+        feature1_desc: "Sehen Sie den Fortschritt Ihrer Projekte in Echtzeit",
+        feature2_title: "Dokumente",
+        feature2_desc: "Zugriff auf Verträge, Pläne und Berichte",
+        feature3_title: "Rechnungen und Zahlungen",
+        feature3_desc: "Rechnungen und Zahlungshistorie einsehen",
+        feature4_title: "Direkte Kommunikation",
+        feature4_desc: "Nachrichten an unser Team senden",
+        portal_no_access: "Noch keinen Zugang?",
+        portal_contact: "Wenn Sie unser Kunde sind und noch keine Zugangsdaten zum Portal haben, kontaktieren Sie uns per E-Mail <strong>info@decadadecertezas.pt</strong> oder über den Kontaktbereich unten.",
+        contact_title: "Kontaktieren Sie uns",
+        contact_address_title: "Adresse",
+        contact_email_title: "E-Mail",
+        contact_phone_title: "Telefon",
+        contact_phone_text: "Kontaktieren Sie uns für weitere Informationen",
+        quote_title: "📋 Angebot anfordern",
+        quote_name: "Vollständiger Name *",
+        quote_name_placeholder: "Ihr vollständiger Name",
+        quote_email: "E-Mail *",
+        quote_phone: "Telefon *",
+        quote_phone_placeholder: "Telefonnummer",
+        quote_phone_hint: "Geben Sie die vollständige Nummer Ihres Landes ein",
+        quote_service: "Dienstleistungsart *",
+        quote_service_select: "Wählen Sie eine Dienstleistung",
+        quote_service_construction: "Gebäudebau",
+        quote_service_flooring: "Bodenbeläge",
+        quote_service_painting: "Malerei und Glas",
+        quote_service_industrial: "Industriereinigung",
+        quote_service_general: "Allgemeine Reinigung",
+        quote_service_other: "Andere",
+        quote_location: "Projektstandort",
+        quote_location_placeholder: "Stadt/Region",
+        quote_message: "Projektbeschreibung *",
+        quote_message_placeholder: "Beschreiben Sie Ihr Projekt im Detail...",
+        quote_submit: "Angebotsanfrage senden",
+        footer_text: "© 2024 Década de Certezas. Alle Rechte vorbehalten."
+      }
+    };
+
+    const languages = [
+      { code: 'pt', name: 'Português', flag: '🇵🇹' },
+      { code: 'en', name: 'English', flag: '🇬🇧' },
+      { code: 'es', name: 'Español', flag: '🇪🇸' },
+      { code: 'fr', name: 'Français', flag: '🇫🇷' },
+      { code: 'de', name: 'Deutsch', flag: '🇩🇪' }
+    ];
+
+    let currentLanguage = 'pt';
+
+    function translatePage(lang) {
+      if (!translations[lang]) {
+        // If translation not available, use Google Translate API simulation
+        console.log(`Translation for ${lang} not available, would use translation API`);
+        return;
+      }
+
+      const trans = translations[lang];
+
+      // Translate all elements with data-i18n attribute
+      document.querySelectorAll('[data-i18n]').forEach(element => {
+        const key = element.getAttribute('data-i18n');
+        if (trans[key]) {
+          element.innerHTML = trans[key];
+        }
+      });
+
+      // Translate placeholders
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(element => {
+        const key = element.getAttribute('data-i18n-placeholder');
+        if (trans[key]) {
+          element.placeholder = trans[key];
+        }
+      });
+
+      currentLanguage = lang;
+
+      // Update active state in dropdown
+      document.querySelectorAll('.language-option').forEach(option => {
+        option.classList.remove('active');
+        if (option.dataset.lang === lang) {
+          option.classList.add('active');
+        }
+      });
+    }
+
+    // Initialize language selector
+    function initLanguageSelector() {
+      const languageList = document.getElementById('language-list');
+      const languageBtn = document.getElementById('language-btn');
+      const languageDropdown = document.getElementById('language-dropdown');
+
+      // Populate language list
+      languages.forEach(lang => {
+        const option = document.createElement('div');
+        option.className = 'language-option';
+        option.dataset.lang = lang.code;
+        option.innerHTML = `<span>${lang.flag}</span><span>${lang.name}</span>`;
+        if (lang.code === currentLanguage) {
+          option.classList.add('active');
+        }
+        option.addEventListener('click', () => {
+          translatePage(lang.code);
+          languageDropdown.classList.remove('show');
+        });
+        languageList.appendChild(option);
+      });
+
+      // Toggle dropdown
+      languageBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        languageDropdown.classList.toggle('show');
+      });
+
+      // Close dropdown when clicking outside
+      document.addEventListener('click', (e) => {
+        if (!languageDropdown.contains(e.target) && e.target !== languageBtn) {
+          languageDropdown.classList.remove('show');
+        }
+      });
+    }
+
+    // Portal form handling
+    document.getElementById('portal-form').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('password').value;
+
+      const messageDiv = document.createElement('div');
+      messageDiv.className = 'alert alert-info mt-3';
+      messageDiv.style.textAlign = 'center';
+      messageDiv.innerHTML = '<strong>Demo:</strong> Esta é uma demonstração. Em produção, o sistema faria login no portal do cliente.';
+
+      const existingMessage = document.querySelector('.portal-form .alert');
+      if (existingMessage) {
+        existingMessage.remove();
+      }
+
+      this.appendChild(messageDiv);
+
+      setTimeout(() => {
+        messageDiv.remove();
+      }, 5000);
+    });
+
+    // Phone number validation
+    const phoneInput = document.getElementById('quote-phone');
+
+    phoneInput.addEventListener('input', function (e) {
+      let value = e.target.value;
+      let filtered = value.replace(/[^0-9()\-]/g, '');
+
+      if (value !== filtered) {
+        e.target.value = filtered;
+      }
+    });
+
+    // Quote form handling
+    document.getElementById('quote-form').addEventListener('submit', async function (e) {
+      e.preventDefault();
+
+      if (!this.checkValidity()) {
+        this.classList.add('was-validated');
+        return;
+      }
+
+      const submitBtn = document.getElementById('submit-btn');
+      const messageDiv = document.getElementById('form-message');
+
+      const countryCode = document.getElementById('quote-country-code').value;
+      const phoneNumber = document.getElementById('quote-phone').value;
+      const fullPhone = countryCode + ' ' + phoneNumber;
+
+      const formData = {
+        name: document.getElementById('quote-name').value,
+        email: document.getElementById('quote-email').value,
+        phone: fullPhone,
+        service: document.getElementById('quote-service').value,
+        location: document.getElementById('quote-location').value,
+        message: document.getElementById('quote-message').value
       };
 
-      async function onConfigChange(config) {
-        const baseFont = config.font_family || defaultConfig.font_family;
-        const baseFontStack = `${baseFont}, Tahoma, Geneva, Verdana, sans-serif`;
-        const baseSize = config.font_size || defaultConfig.font_size;
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'A enviar...';
+      messageDiv.style.display = 'none';
 
-        document.body.style.fontFamily = baseFontStack;
-        document.body.style.fontSize = `${baseSize}px`;
-        document.body.style.color =
-          config.text_color || defaultConfig.text_color;
+      try {
+        await new Promise(resolve => setTimeout(resolve, 1500));
 
-        const backgroundColor =
-          config.background_color || defaultConfig.background_color;
-        const primaryColor =
-          config.primary_color || defaultConfig.primary_color;
-        const accentColor = config.accent_color || defaultConfig.accent_color;
-        const surfaceColor =
-          config.surface_color || defaultConfig.surface_color;
+        messageDiv.className = 'form-message success';
+        messageDiv.textContent = '✓ Pedido enviado com sucesso! Entraremos em contato em breve.';
+        messageDiv.style.display = 'block';
 
-        document.querySelector(
-          ".hero"
-        ).style.background = `linear-gradient(135deg, ${primaryColor} 0%, #2c7ab8 100%)`;
-        document.querySelector(
-          ".navbar"
-        ).style.background = `linear-gradient(135deg, ${primaryColor} 0%, #2c7ab8 100%)`;
-        document.querySelector("footer").style.background = primaryColor;
+        this.reset();
+        this.classList.remove('was-validated');
 
-        const navLinks = document.querySelectorAll(".nav-link");
-        navLinks.forEach((link) => {
-          link.style.color = "#ffffff";
-        });
+      } catch (error) {
+        messageDiv.className = 'form-message error';
+        messageDiv.textContent = '✗ Erro ao enviar pedido. Por favor, tente novamente ou contacte-nos diretamente.';
+        messageDiv.style.display = 'block';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Enviar Pedido de Orçamento';
 
-        const h1Elements = document.querySelectorAll(
-          ".about h2, .services h2, .portal h2, .contact h2"
-        );
-        h1Elements.forEach((el) => {
-          el.style.color = primaryColor;
-          el.style.fontSize = `${baseSize * 2.25}px`;
-        });
+        setTimeout(() => {
+          messageDiv.style.display = 'none';
+        }, 5000);
+      }
+    });
 
-        const heroTitle = document.querySelector(".hero h1");
-        if (heroTitle) {
-          heroTitle.style.color = "#ffffff";
-          heroTitle.style.fontSize = `${baseSize * 2.25}px`;
-        }
+    const defaultConfig = {
+      company_name: "Década de Certezas",
+      hero_title: "Construindo o Futuro com Certeza",
+      hero_subtitle: "Excelência em construção desde 2023",
+      about_title: "Sobre a Década de Certezas",
+      services_title: "Os Nossos Serviços",
+      portal_title: "Portal do Cliente",
+      contact_title: "Entre em Contato",
+      footer_text: "© 2024 Década de Certezas. Todos os direitos reservados.",
+      background_color: "#f5f7fa",
+      primary_color: "#1a5490",
+      accent_color: "#e67e22",
+      text_color: "#333333",
+      surface_color: "#ffffff",
+      font_family: "Segoe UI",
+      font_size: 16
+    };
 
-        const h3Elements = document.querySelectorAll(
-          ".service-card h3, .info-text h3, .stat-card h3, .portal-card h3, .portal-features h3, .portal-info h4, .quote-form-card h3"
-        );
-        h3Elements.forEach((el) => {
-          el.style.color = primaryColor;
-          el.style.fontSize = `${baseSize * 1.375}px`;
-        });
+    async function onConfigChange(config) {
+      const baseFont = config.font_family || defaultConfig.font_family;
+      const baseFontStack = `${baseFont}, Tahoma, Geneva, Verdana, sans-serif`;
+      const baseSize = config.font_size || defaultConfig.font_size;
 
-        document.querySelector(".cta-button").style.background = accentColor;
-        document.querySelector(".cta-button").style.fontSize = `${
-          baseSize * 1.125
-        }px`;
+      document.body.style.fontFamily = baseFontStack;
+      document.body.style.fontSize = `${baseSize}px`;
+      document.body.style.color = config.text_color || defaultConfig.text_color;
 
-        document.querySelector(".btn-portal").style.background = primaryColor;
-        document.querySelector(".btn-portal").style.fontSize = `${baseSize}px`;
+      const backgroundColor = config.background_color || defaultConfig.background_color;
+      const primaryColor = config.primary_color || defaultConfig.primary_color;
+      const accentColor = config.accent_color || defaultConfig.accent_color;
+      const surfaceColor = config.surface_color || defaultConfig.surface_color;
 
-        document.querySelector(".btn-quote").style.background = accentColor;
-        document.querySelector(".btn-quote").style.fontSize = `${baseSize}px`;
+      document.querySelector('.hero').style.background = `linear-gradient(135deg, ${primaryColor} 0%, #2c7ab8 100%)`;
+      document.querySelector('.navbar').style.background = `linear-gradient(135deg, ${primaryColor} 0%, #2c7ab8 100%)`;
+      document.querySelector('footer').style.background = primaryColor;
 
-        const portalLinks = document.querySelectorAll(".portal-link");
-        portalLinks.forEach((link) => {
-          link.style.color = primaryColor;
-        });
+      const navLinks = document.querySelectorAll('.nav-link');
+      navLinks.forEach(link => {
+        link.style.color = '#ffffff';
+      });
 
-        const serviceCards = document.querySelectorAll(".service-card");
-        serviceCards.forEach((card) => {
-          card.style.background = surfaceColor;
-        });
+      const h1Elements = document.querySelectorAll('.about h2, .services h2, .portal h2, .contact h2');
+      h1Elements.forEach(el => {
+        el.style.color = primaryColor;
+        el.style.fontSize = `${baseSize * 2.25}px`;
+      });
 
-        const portalCards = document.querySelectorAll(
-          ".portal-card, .portal-features, .portal-info"
-        );
-        portalCards.forEach((card) => {
-          card.style.background = surfaceColor;
-        });
-
-        const statCards = document.querySelectorAll(".stat-card");
-        statCards.forEach((card) => {
-          card.style.borderLeftColor = primaryColor;
-        });
-
-        const heroSubtitle = document.querySelector(".hero p");
-        if (heroSubtitle) {
-          heroSubtitle.style.fontSize = `${baseSize * 1.25}px`;
-          heroSubtitle.style.color = "#ffffff";
-        }
-
-        document.getElementById("company-name").textContent =
-          config.company_name || defaultConfig.company_name;
-        document.getElementById("hero-title").textContent =
-          config.hero_title || defaultConfig.hero_title;
-        document.getElementById("hero-subtitle").textContent =
-          config.hero_subtitle || defaultConfig.hero_subtitle;
-        document.getElementById("about-title").textContent =
-          config.about_title || defaultConfig.about_title;
-        document.getElementById("services-title").textContent =
-          config.services_title || defaultConfig.services_title;
-        document.getElementById("portal-title").textContent =
-          config.portal_title || defaultConfig.portal_title;
-        document.getElementById("contact-title").textContent =
-          config.contact_title || defaultConfig.contact_title;
-        document.getElementById("footer-text").textContent =
-          config.footer_text || defaultConfig.footer_text;
+      const heroTitle = document.querySelector('.hero h1');
+      if (heroTitle) {
+        heroTitle.style.color = '#ffffff';
+        heroTitle.style.fontSize = `${baseSize * 2.25}px`;
       }
 
-      if (window.elementSdk) {
-        window.elementSdk.init({
-          defaultConfig,
-          onConfigChange,
-          mapToCapabilities: (config) => ({
-            recolorables: [
-              {
-                get: () =>
-                  config.background_color || defaultConfig.background_color,
-                set: (value) => {
-                  window.elementSdk.config.background_color = value;
-                  window.elementSdk.setConfig({ background_color: value });
-                },
-              },
-              {
-                get: () => config.surface_color || defaultConfig.surface_color,
-                set: (value) => {
-                  window.elementSdk.config.surface_color = value;
-                  window.elementSdk.setConfig({ surface_color: value });
-                },
-              },
-              {
-                get: () => config.text_color || defaultConfig.text_color,
-                set: (value) => {
-                  window.elementSdk.config.text_color = value;
-                  window.elementSdk.setConfig({ text_color: value });
-                },
-              },
-              {
-                get: () => config.primary_color || defaultConfig.primary_color,
-                set: (value) => {
-                  window.elementSdk.config.primary_color = value;
-                  window.elementSdk.setConfig({ primary_color: value });
-                },
-              },
-              {
-                get: () => config.accent_color || defaultConfig.accent_color,
-                set: (value) => {
-                  window.elementSdk.config.accent_color = value;
-                  window.elementSdk.setConfig({ accent_color: value });
-                },
-              },
-            ],
-            borderables: [],
-            fontEditable: {
-              get: () => config.font_family || defaultConfig.font_family,
-              set: (value) => {
-                window.elementSdk.config.font_family = value;
-                window.elementSdk.setConfig({ font_family: value });
-              },
-            },
-            fontSizeable: {
-              get: () => config.font_size || defaultConfig.font_size,
-              set: (value) => {
-                window.elementSdk.config.font_size = value;
-                window.elementSdk.setConfig({ font_size: value });
-              },
-            },
-          }),
-          mapToEditPanelValues: (config) =>
-            new Map([
-              [
-                "company_name",
-                config.company_name || defaultConfig.company_name,
-              ],
-              ["hero_title", config.hero_title || defaultConfig.hero_title],
-              [
-                "hero_subtitle",
-                config.hero_subtitle || defaultConfig.hero_subtitle,
-              ],
-              ["about_title", config.about_title || defaultConfig.about_title],
-              [
-                "services_title",
-                config.services_title || defaultConfig.services_title,
-              ],
-              [
-                "portal_title",
-                config.portal_title || defaultConfig.portal_title,
-              ],
-              [
-                "contact_title",
-                config.contact_title || defaultConfig.contact_title,
-              ],
-              ["footer_text", config.footer_text || defaultConfig.footer_text],
-            ]),
-        });
+      const h3Elements = document.querySelectorAll('.service-card h3, .info-text h3, .stat-card h3, .portal-card h3, .portal-features h3, .portal-info h4, .quote-form-card h3');
+      h3Elements.forEach(el => {
+        el.style.color = primaryColor;
+        el.style.fontSize = `${baseSize * 1.375}px`;
+      });
+
+      document.querySelector('.cta-button').style.background = accentColor;
+      document.querySelector('.cta-button').style.fontSize = `${baseSize * 1.125}px`;
+
+      document.querySelector('.btn-portal').style.background = primaryColor;
+      document.querySelector('.btn-portal').style.fontSize = `${baseSize}px`;
+
+      document.querySelector('.btn-quote').style.background = accentColor;
+      document.querySelector('.btn-quote').style.fontSize = `${baseSize}px`;
+
+      const portalLinks = document.querySelectorAll('.portal-link');
+      portalLinks.forEach(link => {
+        link.style.color = primaryColor;
+      });
+
+      const serviceCards = document.querySelectorAll('.service-card');
+      serviceCards.forEach(card => {
+        card.style.background = surfaceColor;
+      });
+
+      const portalCards = document.querySelectorAll('.portal-card, .portal-features, .portal-info');
+      portalCards.forEach(card => {
+        card.style.background = surfaceColor;
+      });
+
+      const statCards = document.querySelectorAll('.stat-card');
+      statCards.forEach(card => {
+        card.style.borderLeftColor = primaryColor;
+      });
+
+      const heroSubtitle = document.querySelector('.hero p');
+      if (heroSubtitle) {
+        heroSubtitle.style.fontSize = `${baseSize * 1.25}px`;
+        heroSubtitle.style.color = '#ffffff';
       }
-    </script>
-    <script>
-      (function () {
-        function c() {
-          var b = a.contentDocument || a.contentWindow.document;
-          if (b) {
-            var d = b.createElement("script");
-            d.innerHTML =
-              "window.__CF$cv$params={r:'99d07ac14747f1d1',t:'MTc2Mjg5MjMxMy4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";
-            b.getElementsByTagName("head")[0].appendChild(d);
+
+      document.getElementById('company-name').textContent = config.company_name || defaultConfig.company_name;
+
+      // Only update if not translated
+      if (currentLanguage === 'pt') {
+        document.getElementById('hero-title').textContent = config.hero_title || defaultConfig.hero_title;
+        document.getElementById('hero-subtitle').textContent = config.hero_subtitle || defaultConfig.hero_subtitle;
+        document.getElementById('about-title').textContent = config.about_title || defaultConfig.about_title;
+        document.getElementById('services-title').textContent = config.services_title || defaultConfig.services_title;
+        document.getElementById('portal-title').textContent = config.portal_title || defaultConfig.portal_title;
+        document.getElementById('contact-title').textContent = config.contact_title || defaultConfig.contact_title;
+        document.getElementById('footer-text').textContent = config.footer_text || defaultConfig.footer_text;
+      }
+    }
+
+    // Initialize language selector on page load
+    initLanguageSelector();
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () => config.background_color || defaultConfig.background_color,
+              set: (value) => {
+                window.elementSdk.config.background_color = value;
+                window.elementSdk.setConfig({ background_color: value });
+              }
+            },
+            {
+              get: () => config.surface_color || defaultConfig.surface_color,
+              set: (value) => {
+                window.elementSdk.config.surface_color = value;
+                window.elementSdk.setConfig({ surface_color: value });
+              }
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => {
+                window.elementSdk.config.text_color = value;
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            },
+            {
+              get: () => config.primary_color || defaultConfig.primary_color,
+              set: (value) => {
+                window.elementSdk.config.primary_color = value;
+                window.elementSdk.setConfig({ primary_color: value });
+              }
+            },
+            {
+              get: () => config.accent_color || defaultConfig.accent_color,
+              set: (value) => {
+                window.elementSdk.config.accent_color = value;
+                window.elementSdk.setConfig({ accent_color: value });
+              }
+            }
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => config.font_family || defaultConfig.font_family,
+            set: (value) => {
+              window.elementSdk.config.font_family = value;
+              window.elementSdk.setConfig({ font_family: value });
+            }
+          },
+          fontSizeable: {
+            get: () => config.font_size || defaultConfig.font_size,
+            set: (value) => {
+              window.elementSdk.config.font_size = value;
+              window.elementSdk.setConfig({ font_size: value });
+            }
           }
-        }
-        if (document.body) {
-          var a = document.createElement("iframe");
-          a.height = 1;
-          a.width = 1;
-          a.style.position = "absolute";
-          a.style.top = 0;
-          a.style.left = 0;
-          a.style.border = "none";
-          a.style.visibility = "hidden";
-          document.body.appendChild(a);
-          if ("loading" !== document.readyState) c();
-          else if (window.addEventListener)
-            document.addEventListener("DOMContentLoaded", c);
-          else {
-            var e = document.onreadystatechange || function () {};
-            document.onreadystatechange = function (b) {
-              e(b);
-              "loading" !== document.readyState &&
-                ((document.onreadystatechange = e), c());
-            };
-          }
-        }
-      })();
-    </script>
-  </body>
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ["company_name", config.company_name || defaultConfig.company_name],
+          ["hero_title", config.hero_title || defaultConfig.hero_title],
+          ["hero_subtitle", config.hero_subtitle || defaultConfig.hero_subtitle],
+          ["about_title", config.about_title || defaultConfig.about_title],
+          ["services_title", config.services_title || defaultConfig.services_title],
+          ["portal_title", config.portal_title || defaultConfig.portal_title],
+          ["contact_title", config.contact_title || defaultConfig.contact_title],
+          ["footer_text", config.footer_text || defaultConfig.footer_text]
+        ])
+      });
+    }
+  </script>
+  <script>(function () { function c() { var b = a.contentDocument || a.contentWindow.document; if (b) { var d = b.createElement('script'); d.innerHTML = "window.__CF$cv$params={r:'99d1b2f895f027fd',t:'MTc2MjkwNTEwMi4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);"; b.getElementsByTagName('head')[0].appendChild(d) } } if (document.body) { var a = document.createElement('iframe'); a.height = 1; a.width = 1; a.style.position = 'absolute'; a.style.top = 0; a.style.left = 0; a.style.border = 'none'; a.style.visibility = 'hidden'; document.body.appendChild(a); if ('loading' !== document.readyState) c(); else if (window.addEventListener) document.addEventListener('DOMContentLoaded', c); else { var e = document.onreadystatechange || function () { }; document.onreadystatechange = function (b) { e(b); 'loading' !== document.readyState && (document.onreadystatechange = e, c()) } } } })();</script>
+</body>
+
 </html>
