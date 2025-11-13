@@ -20,7 +20,7 @@ body {
 
 /* Navigation */
 .navbar {
-  background: white;
+  background: rgba(247, 245, 245, 0.993);
   color: #1a5490;
   position: fixed;
   top: 0;
