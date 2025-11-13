@@ -20,8 +20,8 @@ body {
 
 /* Navigation */
 .navbar {
-  background: linear-gradient(135deg, #1a5490 0%, #2c7ab8 100%);
-  color: white;
+  background: white;
+  color: #1a5490;
   position: fixed;
   top: 0;
   z-index: 2000;
@@ -31,14 +31,14 @@ body {
 .navbar-brand {
   font-size: 24px;
   font-weight: bold;
-  color: white !important;
+  color: #1a5490 !important;
   display: flex;
   align-items: center;
   gap: 15px;
 }
 
 .navbar-brand:hover {
-  color: white !important;
+  color: #1a5490 !important;
   opacity: 0.9;
 }
 
@@ -51,7 +51,6 @@ body {
   justify-content: center;
   flex-shrink: 0;
   overflow: hidden;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
 }
 
 .logo-img {
@@ -94,7 +93,7 @@ body {
 }
 
 .nav-link {
-  color: #ffffff !important;
+  color: #1a5490 !important;
   font-weight: 500 !important;
   transition: all 0.3s ease !important;
   padding: 0.5rem 1rem !important;
@@ -105,7 +104,7 @@ body {
 }
 
 .nav-link:hover {
-  color: #ffffff !important;
+  color: #1a5490 !important;
   background-color: rgba(255, 255, 255, 0.15) !important;
   border-radius: 5px !important;
   opacity: 1 !important;
@@ -114,7 +113,7 @@ body {
 .nav-link:visited,
 .nav-link:active,
 .nav-link:focus {
-  color: #ffffff !important;
+  color: #1a5490 !important;
   opacity: 1 !important;
 }
 
@@ -137,7 +136,7 @@ body {
 .language-btn {
   background: transparent !important;
   border: none !important;
-  color: white !important;
+  color: #1a5490 !important;
   padding: 8px !important;
   border-radius: 50% !important;
   cursor: pointer !important;
@@ -189,7 +188,7 @@ body {
   align-items: center;
   gap: 10px;
   transition: background 0.2s;
-  color: #333;
+  color: #1a5490;
   font-size: 14px;
 }
 
@@ -198,8 +197,8 @@ body {
 }
 
 .language-option.active {
-  background: #e3f2fd;
-  color: #1a5490;
+  background: #1a5490;
+  color: white;
   font-weight: 500;
 }
 
@@ -209,7 +208,7 @@ body {
 
 @media (max-width: 991px) {
   .navbar-collapse {
-    background-color: rgba(26, 84, 144, 0.95);
+    background-color: white;
     padding: 15px;
     border-radius: 8px;
     margin-top: 10px;
