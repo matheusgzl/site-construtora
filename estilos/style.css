@@ -309,7 +309,7 @@ body {
     }
 
     .mobile-language-selector .language-btn {
-      width: 100%;
+      width: auto;
       height: 54px;
       border-radius: 10px;
       background: rgba(26, 84, 144, 0.25) !important;
@@ -321,7 +321,7 @@ body {
       justify-content: center;
       gap: 12px;
       transition: all 0.3s ease;
-      font-size: 16px;
+      font-size: 10px;
       font-weight: 600;
       box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
       opacity: 1 !important;
@@ -345,7 +345,7 @@ body {
     .mobile-language-selector .language-btn::after {
       content: var(--language-text, 'Idioma / Language');
       color: #1a5490;
-      font-size: 14px;
+      font-size: 10px;
     }
 
     .dropdown-menu {
@@ -354,7 +354,7 @@ body {
       border-radius: 8px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
       padding: 0.5rem 0;
-      min-width: 200px;
+      min-width: 150px;
       z-index: 1050;
     }
 
@@ -366,22 +366,25 @@ body {
       gap: 10px;
       transition: background 0.2s;
       color: #333;
-      font-size: 14px;
+      font-size: 11px;
       border: none;
       background: none;
-      width: 100%;
+      width: 50px;
       text-align: left;
     }
 
     .dropdown-item:hover {
       background: #f0f0f0;
       color: #333;
+      width: 100%;
     }
 
     .dropdown-item.active {
       background: #e3f2fd;
       color: #1a5490;
       font-weight: 500;
+      font-size: 11px;
+      width: auto;
     }
 
     .dropdown-item:focus {
