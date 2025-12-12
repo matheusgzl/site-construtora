@@ -671,6 +671,7 @@ body {
 
     .btn-portal:hover {
       background: #0f3a6a;
+      color: white;
     }
 
     .portal-link {
