@@ -837,6 +837,16 @@ body {
       min-height: 100px;
     }
 
+    @media (max-width: 768px) {
+      .quote-form select.form-control {
+        font-size: 13px;
+      }
+
+      .quote-form select.form-control option {
+        font-size: 13px;
+      }
+    }
+
     .btn-quote {
       background: #e67e22;
       color: white;
@@ -888,4 +898,10 @@ body {
 
     footer p {
       margin: 0;
+    }
+
+    @media (max-width: 768px) {
+      footer p {
+        font-size: 14px;
+      }
     }
