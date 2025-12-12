@@ -839,11 +839,11 @@ body {
 
     @media (max-width: 768px) {
       .quote-form select.form-control {
-        font-size: 13px;
+        font-size: 10px;
       }
 
       .quote-form select.form-control option {
-        font-size: 13px;
+        font-size: 10px;
       }
     }
 
