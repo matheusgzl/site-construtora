@@ -847,6 +847,12 @@ body {
       }
     }
 
+    @media (max-width: 768px) {
+      .quote-form .form-label {
+        font-size: 13px;
+      }
+    }
+
     .btn-quote {
       background: #e67e22;
       color: white;
